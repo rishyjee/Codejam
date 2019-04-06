@@ -1,0 +1,29 @@
+import random
+for _ in range(int(input())):
+    n=input()
+    count=len(n)
+    N=int(n)
+    k=random.randint(1, N)
+    A=k
+    B=N-k
+    counts=count
+    lis=[]
+    lis.append(A)
+    lis.append(B)
+    for i in lis:
+        k=i
+        while (k>0):
+            rem=k%10
+            k=k/10
+            if rem==4:
+                k=random.randint(1,N)
+                A=k
+                B=N-k
+                del lis[:]
+                lis.append(A)
+                lis.append(B)
+    
+   
+
+    print(A, end=' ')
+    print(B)
